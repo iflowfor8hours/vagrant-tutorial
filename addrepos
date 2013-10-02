@@ -1,0 +1,12 @@
+#!/bin/bash
+alias a='add-apt-repository -y'
+add-apt-repository -y ppa:chris-lea/python-flask 
+add-apt-repository -y ppa:chris-lea/python-markupsafe
+add-apt-repository -y ppa:chris-lea/libjs-underscore
+add-apt-repository -y ppa:chris-lea/libjs-jquery
+add-apt-repository -y ppa:chris-lea/python-sphinx 
+add-apt-repository -y ppa:chris-lea/python-itsdangerous
+add-apt-repository -y ppa:chris-lea/python-jinja2 
+add-apt-repository -y ppa:chris-lea/python-werkzeug
+apt-get update 
+apt-get --download-only install python-flask 
