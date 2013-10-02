@@ -11,7 +11,7 @@ check_installed () {
 check_flask_is_installed () {
   pip freeze | grep -i flask
   if [ $? -ne 0 ]
-  then echo "First install Flask (using pip)"
+  then echo "First install Flask (using pip)" && exit 1
   fi
 }
 
