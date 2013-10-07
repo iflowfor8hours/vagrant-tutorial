@@ -1,0 +1,32 @@
+What is vagrant?
+  Tool written in ruby for describing and running environments. It ties a virtualization technology and a provisioning tool together with a DSL to allow you to easily recreate systems on any machine.
+
+Why should I care?
+  Vagrant allows you to programatically describe your deployments or your development environment so they can be run in a consistent manner on anyone's machine. 
+  This means that once you have it setup on one machine, it's trivial to get the exact same environment on other peoples computers. This completely removes the need for manually following long, often outdated instructions on how to get your development environment running. New devs on your team don't have to worry about installing tons of software and getting the right versions of libraries, as they are all described in your Vagrantfile.
+  Automating the often error prone and rarely revisited developer machine setup makes beginning working on your project much less painful.
+  A side effect is that you can test out your provisioning scripts. 
+
+How does it make my life better?
+  Developers can use whatever platform they like (windows, os x, linux) and still have consistent environment with the rest of the team. 
+  Testing your deployment and infrastructure code locally (chef and puppet)
+  Less time wasted configuring environments
+
+Solves the problems associated with:
+  Works on my machine.
+  What version is that?
+  How did you configure that server?
+  What dependencies are there?
+
+How does it work?
+Virtualization
+  Vagrant parses the vagrantfile and communicates with the API of your virtualization technology to provision the base of a machine using whatever disk image you like. 
+
+Provisioning 
+  Once the box is running, vagrant will ssh in and run the provisioner on it. This includes your puppet modules, chef cookbooks, scripts, or whatever you use to provision. Once this is complete, vagrant hands control of the machine off to you. 
+
+Vagrantfile
+  This is the file that describes your system and instructs what vagrant should do.
+
+How do I use it?
+  These commands will download and register a box (disk image), generate an example vagrantfile, and then run the box. 
