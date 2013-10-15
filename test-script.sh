@@ -16,12 +16,19 @@ check_db_exists () {
 
 check_db_permissions () {
   if [  "777" -ne `stat --format=%a /tmp/flaskr.db` ]
-  then echo "Change the permission on the database file '/tmp/flask.db'" && exit 1
+  then echo "Change the permission on the database file '/tmp/flask.db' to be world writeable" && exit 1
   fi
 }
 
-check_installed git
-check_installed sqlite3
-check_installed python-flask
-check_db_exists
-check_db_permissions 
+run_tests (){
+  check_installed git
+  check_installed sqlite3
+  check_installed python-flask
+  check_db_exists
+  check_db_permissions 
+}
+
+if [ run_tests ]
+then echo "All tests pass, deploy the application"
+fi
+
