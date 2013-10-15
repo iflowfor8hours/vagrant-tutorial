@@ -1,5 +1,6 @@
 #!/bin/bash
-alias a='add-apt-repository -y'
+
+# apt-get -y install python-software-properties
 add-apt-repository -y ppa:chris-lea/python-flask 
 add-apt-repository -y ppa:chris-lea/python-markupsafe
 add-apt-repository -y ppa:chris-lea/libjs-underscore
@@ -9,4 +10,4 @@ add-apt-repository -y ppa:chris-lea/python-itsdangerous
 add-apt-repository -y ppa:chris-lea/python-jinja2 
 add-apt-repository -y ppa:chris-lea/python-werkzeug
 apt-get update 
-apt-get --download-only install python-flask 
+apt-get -y --download-only install python-flask 

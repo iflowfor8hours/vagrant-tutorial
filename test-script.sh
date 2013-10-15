@@ -8,13 +8,6 @@ check_installed () {
   fi
 }
 
-check_flask_is_installed () {
-  pip freeze | grep -i flask
-  if [ $? -ne 0 ]
-  then echo "First install Flask (using pip)" && exit 1
-  fi
-}
-
 check_db_exists () { 
   if [ ! -f /tmp/flaskr.db ]
   then echo "Create the database file '/tmp/flaskr.db'" && exit 1
@@ -28,8 +21,7 @@ check_db_permissions () {
 }
 
 check_installed git
-check_installed python-pip
 check_installed sqlite3
-check_flask_is_installed
+check_installed python-flask
 check_db_exists
 check_db_permissions 
