@@ -13,7 +13,7 @@ install_application_dependencies () {
 
 install_flask () {
   echo "Installing the flask application container."
-  apt-get install python-flask
+  apt-get -y install python-flask
 }
 
 create_db_file 
